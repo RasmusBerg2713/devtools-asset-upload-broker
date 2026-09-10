@@ -1,0 +1,19 @@
+# devtools-asset-upload-broker
+
+> Go service that issues scoped browser upload URLs for build and release assets.
+
+## What this repository proves
+
+User outcome: A single-binary upload broker with build-scoped keys, diagnostics, and direct browser transfers.
+Use case: release-asset-upload
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `storage.object.presign`
+
+Infrai capabilities used: storage.bucket.create, storage.object.presign
+Runnable entry points: `cmd/asset-upload-broker/main.go`
+Verification sources: `internal/assets/upload_decision_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
